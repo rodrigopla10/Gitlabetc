@@ -30,6 +30,7 @@ namespace GitlabetcAPI
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer
            (Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddControllers();
         }
 
