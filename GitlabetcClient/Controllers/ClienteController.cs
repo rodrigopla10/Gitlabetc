@@ -51,5 +51,36 @@ namespace GitlabetcClient.Controllers
             return View();
         }
 
+        public ActionResult ActualizarCliente(int idCliente, DateTime fechaCreacion)
+        {
+            return View(new ClienteData {idCliente=idCliente, fechaCreacion=fechaCreacion});
+        }
+
+        [HttpPost]
+        public IActionResult ActualizarCliente(ClienteData cliente)
+        {
+            HttpClient clientAPI = _api.ApiAddress();
+
+            var postTask = clientAPI.PutAsJsonAsync<ClienteData>("api/cliente", cliente);
+            postTask.Wait();
+
+            var result = postTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        public IActionResult Delete(int Id)
+        {
+            var cliente = new ClienteData();
+            HttpClient clientAPI = _api.ApiAddress();
+            HttpResponseMessage res = clientAPI.DeleteAsync($"api/cliente/{Id}").Result;
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

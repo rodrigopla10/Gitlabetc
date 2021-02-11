@@ -45,5 +45,46 @@ namespace GitlabetcAPI.Controllers
             return Ok();
         }
 
+
+        [HttpPut]
+        public IActionResult UpdateCliente([FromBody] Cliente cliente)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest("No es modelo valido");
+
+                _clienteRepository.ActualizarCliente(cliente);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Fallo al momento de actualizar al cliente");
+            }
+            return Ok();
+        }
+
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteCliente(int id)
+        {
+            var cliente = _clienteRepository.GetCliente(id);
+            try
+            {
+
+                if (cliente == null)
+                {
+                    return NotFound();
+                }
+
+                _clienteRepository.BorrarCliente(cliente);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Fallo al momento de eliminar al cliente");
+            }
+
+            return NoContent();
+        }
+
     }
 }

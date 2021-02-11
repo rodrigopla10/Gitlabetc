@@ -44,5 +44,44 @@ namespace GitlabetcAPI.Data
             }
         }
 
+        public Cliente GetCliente(int id)
+        {
+            try
+            {
+                return _appDbContext.Cliente.Find(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message.ToString());
+            }
+        }
+        public void ActualizarCliente(Cliente cliente)
+        {
+            try
+            {
+                _appDbContext.Cliente.Update(cliente);
+                _appDbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message.ToString());
+            }
+        }
+
+        public void BorrarCliente(Cliente cliente)
+        {
+            try
+            {
+                _appDbContext.Cliente.Remove(cliente);
+                _appDbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message.ToString());
+            }
+        }
+
+
     }
 }

@@ -31,29 +31,29 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.primerNombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.primerApellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.edad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.fechaCreacion)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.primerNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.primerApellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaCreacion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "ActualizarCliente", new { idCliente = item.idCliente, fechaCreacion = item.fechaCreacion }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idCliente})
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
