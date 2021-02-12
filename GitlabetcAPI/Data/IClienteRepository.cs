@@ -13,7 +13,7 @@ namespace GitlabetcAPI.Data
         void InsertarCliente(Cliente cliente);
 
         void ActualizarCliente(Cliente cliente);
-        
+
         Cliente GetCliente(int id);
 
         void BorrarCliente(Cliente cliente);

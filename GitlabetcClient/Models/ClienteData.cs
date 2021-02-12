@@ -24,6 +24,7 @@ namespace GitlabetcClient.Models
         public int edad { get; set; }
 
         [Required(ErrorMessage = "Favor introduzca una identificacion")]
+        [MinLength(10, ErrorMessage = "Identificacion debe ser al menos de 10 caracteres")]
         [Display(Name = "Identificacion")]
         public string identificacion { get; set; }
 
