@@ -51,9 +51,9 @@ namespace GitlabetcClient.Controllers
             return View();
         }
 
-        public ActionResult ActualizarCliente(int idCliente, DateTime fechaCreacion)
+        public ActionResult ActualizarCliente(int idCliente, string identificacion, DateTime fechaCreacion)
         {
-            return View(new ClienteData {idCliente=idCliente, fechaCreacion=fechaCreacion});
+            return View(new ClienteData { idCliente = idCliente, identificacion = identificacion, fechaCreacion = fechaCreacion });
         }
 
         [HttpPost]

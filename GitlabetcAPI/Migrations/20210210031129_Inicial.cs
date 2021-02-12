@@ -13,8 +13,8 @@ namespace GitlabetcAPI.Migrations
                 {
                     idCliente = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    primerNombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    primerApellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    primerNombre = table.Column<string>(type: "nvarchar(250)", nullable: false),
+                    primerApellido = table.Column<string>(type: "nvarchar(250)", nullable: false),
                     edad = table.Column<int>(type: "int", nullable: true),
                     fechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

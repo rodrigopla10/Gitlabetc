@@ -23,6 +23,11 @@ namespace GitlabetcClient.Models
         [Display(Name = "Edad")]
         public int edad { get; set; }
 
+        [Required(ErrorMessage = "Favor introduzca una identificacion")]
+        [Display(Name = "Identificacion")]
+        public string identificacion { get; set; }
+
+
         [Display(Name = "Fecha creacion")]
         public DateTime fechaCreacion { get; set; }
     }

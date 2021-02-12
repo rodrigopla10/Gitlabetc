@@ -25,6 +25,9 @@
                 @Html.DisplayNameFor(model => model.edad)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.identificacion)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.fechaCreacion)
             </th>
             <th></th>
@@ -47,11 +50,14 @@
                     @Html.DisplayFor(modelItem => item.edad)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.identificacion)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.fechaCreacion)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "ActualizarCliente", new { idCliente = item.idCliente, fechaCreacion = item.fechaCreacion }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.idCliente})
+                    @Html.ActionLink("Editar", "ActualizarCliente", new { idCliente = item.idCliente, identificacion = item.identificacion, fechaCreacion = item.fechaCreacion }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idCliente })
                 </td>
             </tr>
         }

@@ -11,6 +11,8 @@ namespace GitlabetcAPI.Models
         [Key]
         public int idCliente { get; set; }
 
+        public string identificacion { get; set; }
+
         public string primerNombre { get; set; }
 
         public string primerApellido { get; set; }
